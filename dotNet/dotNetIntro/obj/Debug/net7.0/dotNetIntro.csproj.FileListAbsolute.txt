@@ -1,0 +1,15 @@
+C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\dotNetIntro\bin\Debug\net7.0\dotNetIntro.exe
+C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\dotNetIntro\bin\Debug\net7.0\dotNetIntro.deps.json
+C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\dotNetIntro\bin\Debug\net7.0\dotNetIntro.runtimeconfig.json
+C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\dotNetIntro\bin\Debug\net7.0\dotNetIntro.dll
+C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\dotNetIntro\bin\Debug\net7.0\dotNetIntro.pdb
+C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\dotNetIntro\obj\Debug\net7.0\dotNetIntro.csproj.AssemblyReference.cache
+C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\dotNetIntro\obj\Debug\net7.0\dotNetIntro.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\dotNetIntro\obj\Debug\net7.0\dotNetIntro.AssemblyInfoInputs.cache
+C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\dotNetIntro\obj\Debug\net7.0\dotNetIntro.AssemblyInfo.cs
+C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\dotNetIntro\obj\Debug\net7.0\dotNetIntro.csproj.CoreCompileInputs.cache
+C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\dotNetIntro\obj\Debug\net7.0\dotNetIntro.dll
+C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\dotNetIntro\obj\Debug\net7.0\refint\dotNetIntro.dll
+C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\dotNetIntro\obj\Debug\net7.0\dotNetIntro.pdb
+C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\dotNetIntro\obj\Debug\net7.0\dotNetIntro.genruntimeconfig.cache
+C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\dotNetIntro\obj\Debug\net7.0\ref\dotNetIntro.dll
