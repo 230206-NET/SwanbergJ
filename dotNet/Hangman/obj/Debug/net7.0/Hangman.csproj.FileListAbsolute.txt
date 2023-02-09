@@ -1,0 +1,15 @@
+C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\Hangman\bin\Debug\net7.0\Hangman.exe
+C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\Hangman\bin\Debug\net7.0\Hangman.deps.json
+C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\Hangman\bin\Debug\net7.0\Hangman.runtimeconfig.json
+C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\Hangman\bin\Debug\net7.0\Hangman.dll
+C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\Hangman\bin\Debug\net7.0\Hangman.pdb
+C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\Hangman\obj\Debug\net7.0\Hangman.csproj.AssemblyReference.cache
+C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\Hangman\obj\Debug\net7.0\Hangman.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\Hangman\obj\Debug\net7.0\Hangman.AssemblyInfoInputs.cache
+C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\Hangman\obj\Debug\net7.0\Hangman.AssemblyInfo.cs
+C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\Hangman\obj\Debug\net7.0\Hangman.csproj.CoreCompileInputs.cache
+C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\Hangman\obj\Debug\net7.0\Hangman.dll
+C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\Hangman\obj\Debug\net7.0\refint\Hangman.dll
+C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\Hangman\obj\Debug\net7.0\Hangman.pdb
+C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\Hangman\obj\Debug\net7.0\Hangman.genruntimeconfig.cache
+C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\Hangman\obj\Debug\net7.0\ref\Hangman.dll
