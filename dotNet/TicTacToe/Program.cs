@@ -23,30 +23,37 @@ string baseBoard =
       |     |     
 """;
 
+int player = 1;
+
 while (true)
 {
     Console.WriteLine(baseBoard);
-    Console.WriteLine("Player One's Turn");
-    string playerOneMove = Console.ReadLine()!;
-    MakeMove(playerOneMove, 1);
-    Console.WriteLine("Player Twos's Turn");
-    Console.WriteLine(baseBoard);
-    string playerTwoMove = Console.ReadLine()!;
-    MakeMove(playerTwoMove, 2);
+    Console.WriteLine("Player " + player + "'s Turn");
+    string playerMove = Console.ReadLine()!;
+
+    if (baseBoard.Contains(playerMove))
+    {
+
+        MakeMove(playerMove, player);
+        player = (player % 2) + 1;
+
+        Console.WriteLine("Player counter is: " + player);
+    }
+    else
+    {
+        Console.WriteLine("Invalid Move, Try Again");
+    }
+
+
+
+
+
 }
+
 
 
 
 void MakeMove(string playerMove, int player)
 {
-    if (player == 1)
-    {
-        baseBoard.Replace(playerMove, "X");
-    }
-    else
-    {
-        baseBoard.Replace(playerMove, "O");
-
-    }
-
+    baseBoard = baseBoard.Replace(playerMove, player == 1 ? "X" : "O");
 }
