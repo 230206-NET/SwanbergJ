@@ -1,0 +1,105 @@
+{
+  "version": 3,
+  "targets": {
+    "net7.0": {
+      "BudgetApp/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/BudgetApp.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BudgetApp.dll": {}
+        }
+      },
+      "CoinFlipper/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/CoinFlipper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CoinFlipper.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "BudgetApp/1.0.0": {
+      "type": "project",
+      "path": "../BudgetApp/BudgetApp.csproj",
+      "msbuildProject": "../BudgetApp/BudgetApp.csproj"
+    },
+    "CoinFlipper/1.0.0": {
+      "type": "project",
+      "path": "../CoinFlipper/CoinFlipper.csproj",
+      "msbuildProject": "../CoinFlipper/CoinFlipper.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net7.0": [
+      "BudgetApp >= 1.0.0",
+      "CoinFlipper >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Pinkgodzilla\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\Pinkgodzilla\\Documents\\Revature\\SwanbergJ\\dotNet\\WeekOnePortfolio\\WeekOnePortfolio.csproj",
+      "projectName": "WeekOnePortfolio",
+      "projectPath": "C:\\Users\\Pinkgodzilla\\Documents\\Revature\\SwanbergJ\\dotNet\\WeekOnePortfolio\\WeekOnePortfolio.csproj",
+      "packagesPath": "C:\\Users\\Pinkgodzilla\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Pinkgodzilla\\Documents\\Revature\\SwanbergJ\\dotNet\\WeekOnePortfolio\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Pinkgodzilla\\AppData\\Roaming\\NuGet\\NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net7.0"
+      ],
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "projectReferences": {
+            "C:\\Users\\Pinkgodzilla\\Documents\\Revature\\SwanbergJ\\dotNet\\BudgetApp\\BudgetApp.csproj": {
+              "projectPath": "C:\\Users\\Pinkgodzilla\\Documents\\Revature\\SwanbergJ\\dotNet\\BudgetApp\\BudgetApp.csproj"
+            },
+            "C:\\Users\\Pinkgodzilla\\Documents\\Revature\\SwanbergJ\\dotNet\\CoinFlipper\\CoinFlipper.csproj": {
+              "projectPath": "C:\\Users\\Pinkgodzilla\\Documents\\Revature\\SwanbergJ\\dotNet\\CoinFlipper\\CoinFlipper.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net7.0": {
+        "targetAlias": "net7.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

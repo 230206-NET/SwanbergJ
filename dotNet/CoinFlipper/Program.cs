@@ -5,9 +5,9 @@ using System;
 namespace CoinFlipper
 {
 
-    public class Flipper
+    public class MainMenu
     {
-        public static void Main(string[] args)
+        public void Start()
         {
             Console.WriteLine("Coin Flipper starting ...");
             var rand = new Random();

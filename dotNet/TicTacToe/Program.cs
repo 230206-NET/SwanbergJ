@@ -1,14 +1,8 @@
-﻿
+﻿using System.Text.RegularExpressions;
+
+
 Console.WriteLine("TicTacToe");
-string[,] board = new string[3, 3];
-
-
-
-var dict =
-    new Dictionary<string, Tuple<int, int>>{{"1", Tuple.Create(0,0)}, {"2", Tuple.Create(0,1)}, {"3", Tuple.Create(0,2)},
-                                            {"4", Tuple.Create(1,0)}, {"5", Tuple.Create(1,1)}, {"6", Tuple.Create(1,2)},
-                                            {"7", Tuple.Create(2,0)}, {"8", Tuple.Create(2,1)}, {"9", Tuple.Create(2,2)}};
-
+int[,] board = new int[3, 3];
 
 string baseBoard =
 """
@@ -30,30 +24,56 @@ while (true)
     Console.WriteLine(baseBoard);
     Console.WriteLine("Player " + player + "'s Turn");
     string playerMove = Console.ReadLine()!;
+    if (!IsValidMove(playerMove))
+    {
+        Console.WriteLine("Invalid move, please enter a single digit");
+        continue;
+    }
 
     if (baseBoard.Contains(playerMove))
     {
 
         MakeMove(playerMove, player);
+        if (GameOver())
+        {
+            break;
+        }
         player = (player % 2) + 1;
 
         Console.WriteLine("Player counter is: " + player);
     }
     else
     {
-        Console.WriteLine("Invalid Move, Try Again");
+        Console.WriteLine("That spot has already been taken!");
     }
-
-
-
-
-
 }
-
 
 
 
 void MakeMove(string playerMove, int player)
 {
+    int move = Int32.Parse(playerMove);
+    board[((move - 1) / 3), ((move - 1) % 3)] = player;
+    for (int row = 0; row < board.GetLength(0); row++)
+    {
+        for (int col = 0; col < board.GetLength(1); col++)
+        {
+            Console.Write(board[row, col] + " ");
+        }
+        Console.WriteLine();
+        Console.WriteLine("-------");
+    }
     baseBoard = baseBoard.Replace(playerMove, player == 1 ? "X" : "O");
+}
+
+bool IsValidMove(string playerMove)
+{
+    Regex exp = new Regex(@"^[0-9](?!\d)");
+    return exp.Match(playerMove).Success;
+}
+
+bool GameOver()
+{
+
+    return false;
 }

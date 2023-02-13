@@ -1,0 +1,47 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "WeekOnePortfolio/1.0.0": {
+        "dependencies": {
+          "BudgetApp": "1.0.0",
+          "CoinFlipper": "1.0.0"
+        },
+        "runtime": {
+          "WeekOnePortfolio.dll": {}
+        }
+      },
+      "BudgetApp/1.0.0": {
+        "runtime": {
+          "BudgetApp.dll": {}
+        }
+      },
+      "CoinFlipper/1.0.0": {
+        "runtime": {
+          "CoinFlipper.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "WeekOnePortfolio/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BudgetApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CoinFlipper/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

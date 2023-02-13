@@ -1,6 +1,4 @@
-C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\BudgetApp\bin\Debug\net7.0\BudgetApp.exe
 C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\BudgetApp\bin\Debug\net7.0\BudgetApp.deps.json
-C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\BudgetApp\bin\Debug\net7.0\BudgetApp.runtimeconfig.json
 C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\BudgetApp\bin\Debug\net7.0\BudgetApp.dll
 C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\BudgetApp\bin\Debug\net7.0\BudgetApp.pdb
 C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\BudgetApp\obj\Debug\net7.0\BudgetApp.csproj.AssemblyReference.cache
@@ -11,5 +9,4 @@ C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\BudgetApp\obj\Debug\ne
 C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\BudgetApp\obj\Debug\net7.0\BudgetApp.dll
 C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\BudgetApp\obj\Debug\net7.0\refint\BudgetApp.dll
 C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\BudgetApp\obj\Debug\net7.0\BudgetApp.pdb
-C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\BudgetApp\obj\Debug\net7.0\BudgetApp.genruntimeconfig.cache
 C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\BudgetApp\obj\Debug\net7.0\ref\BudgetApp.dll

@@ -3,10 +3,10 @@
 namespace HotOrCold
 {
 
-    public class HOC
+    public class MainMenu
     {
 
-        public static void Main(string[] args)
+        public void Start()
         {
             var rand = new Random();
             int target = rand.Next(20);
