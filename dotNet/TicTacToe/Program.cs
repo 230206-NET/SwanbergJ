@@ -7,10 +7,10 @@ int[,] board = new int[3, 3];
 string baseBoard =
 """
       |     |     
-   1  |  2  |  3                     
+   1  |  2  |  3  
  _____|_____|_____
       |     |     
-   4  |  5  |  6   
+   4  |  5  |  6  
  _____|_____|_____
       |     |     
    7  |  8  |  9  
@@ -34,13 +34,18 @@ while (true)
     {
 
         MakeMove(playerMove, player);
-        if (GameOver())
+        if (!baseBoard.Any(c => char.IsDigit(c)))
         {
+            Console.WriteLine("You tied the game");
+            break;
+        }
+        if (IsGameOver(player))
+        {
+            Console.WriteLine(baseBoard);
+            Console.WriteLine("Player " + player + " won the game");
             break;
         }
         player = (player % 2) + 1;
-
-        Console.WriteLine("Player counter is: " + player);
     }
     else
     {
@@ -50,19 +55,13 @@ while (true)
 
 
 
+
+
+
 void MakeMove(string playerMove, int player)
 {
     int move = Int32.Parse(playerMove);
     board[((move - 1) / 3), ((move - 1) % 3)] = player;
-    for (int row = 0; row < board.GetLength(0); row++)
-    {
-        for (int col = 0; col < board.GetLength(1); col++)
-        {
-            Console.Write(board[row, col] + " ");
-        }
-        Console.WriteLine();
-        Console.WriteLine("-------");
-    }
     baseBoard = baseBoard.Replace(playerMove, player == 1 ? "X" : "O");
 }
 
@@ -72,8 +71,56 @@ bool IsValidMove(string playerMove)
     return exp.Match(playerMove).Success;
 }
 
-bool GameOver()
+bool IsGameOver(int player)
 {
+    //player = 1 or 2
+    //Check rows
+    //board[row, 0] => [1,2,0]
+    //board[row, 1] => [1,1,2]
+    //board[row, 2] => [1,1,1]
+    for (int row = 0; row < board.GetLength(0); row++)
+    {
+        for (int col = 0; col < board.GetLength(0); col++)
+        {
+            if (board[row, col] != (player))
+            {
+                break;
+            }
+            if (col == board.GetLength(0) - 1)
+            {
+                return true;
+            }
+        }
+
+    }
+
+    //Check cols
+    //board[0, 0] => [1,1,1]
+    //board[1, 0] => [2,1,1]
+    //board[2, 0] => [0,2,1]
+    for (int col = 0; col < board.GetLength(0); col++)
+    {
+        for (int row = 0; row < board.GetLength(0); row++)
+        {
+            if (board[row, col] != (player))
+            {
+                break;
+            }
+            if (row == (board.GetLength(0) - 1))
+            {
+                return true;
+            }
+        }
+    }
+
+    //Check diagonal
+    if ((board[0, 0] == player && board[1, 1] == player && board[2, 2] == player)
+     || (board[0, 2] == player && board[1, 1] == player && board[2, 0] == player))
+    {
+        return true;
+    }
+
+    //check if board is full code
 
     return false;
 }
