@@ -5,12 +5,9 @@ namespace TicTacToe;
 public class MainMenu
 {
 
-    public void Start()
-    {
-        Console.WriteLine("TicTacToe");
-        int[,] board = new int[3, 3];
+    public int[,] board = new int[3, 3];
 
-        string baseBoard =
+    public string baseBoard =
         """
             |     |     
          1  |  2  |  3  
@@ -23,7 +20,12 @@ public class MainMenu
             |     |     
         """;
 
-        int player = 1;
+    public int player = 1;
+
+    public void Start()
+    {
+        Console.WriteLine("TicTacToe");
+
 
         while (true)
         {
@@ -59,68 +61,68 @@ public class MainMenu
             }
         }
 
-        void MakeMove(string playerMove, int player)
-        {
-            int move = Int32.Parse(playerMove);
-            board[((move - 1) / 3), ((move - 1) % 3)] = player;
-            baseBoard = baseBoard.Replace(playerMove, player == 1 ? "X" : "O");
-        }
+    }
 
-        bool IsValidMove(string playerMove)
-        {
-            Regex exp = new Regex(@"^[0-9](?!\d)");
-            return exp.Match(playerMove).Success;
-        }
+    public void MakeMove(string playerMove, int player)
+    {
+        int move = Int32.Parse(playerMove);
+        board[((move - 1) / 3), ((move - 1) % 3)] = player;
+        baseBoard = baseBoard.Replace(playerMove, player == 1 ? "X" : "O");
+    }
 
-        bool IsGameOver(int player)
-        {
-            //player = 1 or 2
-            //Check rows
-            //board[row, 0] => [1,2,0]
-            //board[row, 1] => [1,1,2]
-            //board[row, 2] => [1,1,1]
-            for (int row = 0; row < board.GetLength(0); row++)
-            {
-                for (int col = 0; col < board.GetLength(0); col++)
-                {
-                    if (board[row, col] != (player))
-                    {
-                        break;
-                    }
-                    if (col == board.GetLength(0) - 1)
-                    {
-                        return true;
-                    }
-                }
-            }
+    public bool IsValidMove(string playerMove)
+    {
+        Regex exp = new Regex(@"^[0-9](?!\d)");
+        return exp.Match(playerMove).Success;
+    }
 
-            //Check cols
-            //board[0, 0] => [1,1,1]
-            //board[1, 0] => [2,1,1]
-            //board[2, 0] => [0,2,1]
+    public bool IsGameOver(int player)
+    {
+        //Check rows
+        //board[row, 0] => [1,2,0]
+        //board[row, 1] => [1,1,2]
+        //board[row, 2] => [1,1,1]
+        for (int row = 0; row < board.GetLength(0); row++)
+        {
             for (int col = 0; col < board.GetLength(0); col++)
             {
-                for (int row = 0; row < board.GetLength(0); row++)
+                if (board[row, col] != (player))
                 {
-                    if (board[row, col] != (player))
-                    {
-                        break;
-                    }
-                    if (row == (board.GetLength(0) - 1))
-                    {
-                        return true;
-                    }
+                    break;
+                }
+                if (col == board.GetLength(0) - 1)
+                {
+                    return true;
                 }
             }
-            //Check diagonal
-            if ((board[0, 0] == player && board[1, 1] == player && board[2, 2] == player)
-            || (board[0, 2] == player && board[1, 1] == player && board[2, 0] == player))
-            {
-                return true;
-            }
-
-            return false;
         }
+
+        //Check cols
+        //board[0, 0] => [1,1,1]
+        //board[1, 0] => [2,1,1]
+        //board[2, 0] => [0,2,1]
+        for (int col = 0; col < board.GetLength(0); col++)
+        {
+            for (int row = 0; row < board.GetLength(0); row++)
+            {
+                if (board[row, col] != (player))
+                {
+                    break;
+                }
+                if (row == (board.GetLength(0) - 1))
+                {
+                    return true;
+                }
+            }
+        }
+        //Check diagonal
+        if ((board[0, 0] == player && board[1, 1] == player && board[2, 2] == player)
+        || (board[0, 2] == player && board[1, 1] == player && board[2, 0] == player))
+        {
+            return true;
+        }
+
+        return false;
     }
 }
 
