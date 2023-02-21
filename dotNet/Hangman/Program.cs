@@ -25,11 +25,11 @@ public class MainMenu
             Console.WriteLine(displayWord);
             Console.WriteLine("Take a guess: ");
 
-            guess = Console.ReadLine().ToLower();
+            guess = Console.ReadLine()!.ToLower();
             while (!IsInputValid(guess))
             {
                 Console.WriteLine("Please enter a valid guess!");
-                guess = Console.ReadLine().ToLower();
+                guess = Console.ReadLine()!.ToLower();
             }
             int idx = secretWord.IndexOf(guess);
 

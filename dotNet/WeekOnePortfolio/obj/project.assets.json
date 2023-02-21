@@ -21,6 +21,36 @@
         "runtime": {
           "bin/placeholder/CoinFlipper.dll": {}
         }
+      },
+      "Hangman/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Hangman.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Hangman.dll": {}
+        }
+      },
+      "HotOrCold/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/HotOrCold.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HotOrCold.dll": {}
+        }
+      },
+      "TicTacToe/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/TicTacToe.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TicTacToe.dll": {}
+        }
       }
     }
   },
@@ -34,12 +64,30 @@
       "type": "project",
       "path": "../CoinFlipper/CoinFlipper.csproj",
       "msbuildProject": "../CoinFlipper/CoinFlipper.csproj"
+    },
+    "Hangman/1.0.0": {
+      "type": "project",
+      "path": "../Hangman/Hangman.csproj",
+      "msbuildProject": "../Hangman/Hangman.csproj"
+    },
+    "HotOrCold/1.0.0": {
+      "type": "project",
+      "path": "../HotOrCold/HotOrCold.csproj",
+      "msbuildProject": "../HotOrCold/HotOrCold.csproj"
+    },
+    "TicTacToe/1.0.0": {
+      "type": "project",
+      "path": "../TicTacToe/TicTacToe.csproj",
+      "msbuildProject": "../TicTacToe/TicTacToe.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
       "BudgetApp >= 1.0.0",
-      "CoinFlipper >= 1.0.0"
+      "CoinFlipper >= 1.0.0",
+      "Hangman >= 1.0.0",
+      "HotOrCold >= 1.0.0",
+      "TicTacToe >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -69,6 +117,15 @@
             },
             "C:\\Users\\Pinkgodzilla\\Documents\\Revature\\SwanbergJ\\dotNet\\CoinFlipper\\CoinFlipper.csproj": {
               "projectPath": "C:\\Users\\Pinkgodzilla\\Documents\\Revature\\SwanbergJ\\dotNet\\CoinFlipper\\CoinFlipper.csproj"
+            },
+            "C:\\Users\\Pinkgodzilla\\Documents\\Revature\\SwanbergJ\\dotNet\\Hangman\\Hangman.csproj": {
+              "projectPath": "C:\\Users\\Pinkgodzilla\\Documents\\Revature\\SwanbergJ\\dotNet\\Hangman\\Hangman.csproj"
+            },
+            "C:\\Users\\Pinkgodzilla\\Documents\\Revature\\SwanbergJ\\dotNet\\HotOrCold\\HotOrCold.csproj": {
+              "projectPath": "C:\\Users\\Pinkgodzilla\\Documents\\Revature\\SwanbergJ\\dotNet\\HotOrCold\\HotOrCold.csproj"
+            },
+            "C:\\Users\\Pinkgodzilla\\Documents\\Revature\\SwanbergJ\\dotNet\\TicTacToe\\TicTacToe.csproj": {
+              "projectPath": "C:\\Users\\Pinkgodzilla\\Documents\\Revature\\SwanbergJ\\dotNet\\TicTacToe\\TicTacToe.csproj"
             }
           }
         }

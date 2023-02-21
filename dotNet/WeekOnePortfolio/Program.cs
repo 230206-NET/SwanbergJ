@@ -30,7 +30,7 @@ while (true)
             new Hangman.MainMenu().Start();
             break;
         case "5":
-            new TicTacToe.MainMenu().StarT();
+            new TicTacToe.MainMenu().Start();
             break;
         case "q":
             Console.WriteLine("Ending Program...");

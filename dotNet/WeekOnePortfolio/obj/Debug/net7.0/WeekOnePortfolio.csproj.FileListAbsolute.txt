@@ -18,3 +18,9 @@ C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\WeekOnePortfolio\obj\D
 C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\WeekOnePortfolio\obj\Debug\net7.0\WeekOnePortfolio.pdb
 C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\WeekOnePortfolio\obj\Debug\net7.0\WeekOnePortfolio.genruntimeconfig.cache
 C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\WeekOnePortfolio\obj\Debug\net7.0\ref\WeekOnePortfolio.dll
+C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\WeekOnePortfolio\bin\Debug\net7.0\Hangman.dll
+C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\WeekOnePortfolio\bin\Debug\net7.0\HotOrCold.dll
+C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\WeekOnePortfolio\bin\Debug\net7.0\TicTacToe.dll
+C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\WeekOnePortfolio\bin\Debug\net7.0\HotOrCold.pdb
+C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\WeekOnePortfolio\bin\Debug\net7.0\Hangman.pdb
+C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\WeekOnePortfolio\bin\Debug\net7.0\TicTacToe.pdb

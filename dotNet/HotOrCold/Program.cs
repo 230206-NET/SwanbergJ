@@ -15,7 +15,7 @@ namespace HotOrCold
             Console.WriteLine("Welcome to Hot or Cold! Try to guess a number 0 - 20!");
             while (userInput != target)
             {
-                userInput = Int32.Parse(Console.ReadLine());
+                userInput = Int32.Parse(Console.ReadLine()!);
                 if (userInput < target)
                 {
                     Console.WriteLine("Too Cold! Try Again");
