@@ -1,32 +1,42 @@
 using Model;
+using Services;
+using Microsoft.Data.SqlClient;
 
 namespace UI;
 
 public class EmployeeDisplay
 {
+    AccountService _service;
     private Employee employee { get; set; }
-    public EmployeeDisplay(Employee employee)
+    public EmployeeDisplay(Employee employee, AccountService service)
     {
+        _service = service;
         this.employee = employee;
     }
     public void Start()
     {
-        Console.WriteLine("Welcome back " + employee.Name + "!");
-        while (true)
+        bool running = true;
+        Console.WriteLine("Welcome Back Employee" + employee.Name + "!");
+        while (running)
         {
-            Console.WriteLine("[1]: View Tickets");
-            Console.WriteLine("[2]: Create New Ticket");
-            Console.WriteLine("[3]: Edit Pending Ticket");
+            Console.WriteLine("[1]: View Active Tickets");
+            Console.WriteLine("[2]: View All Tickets");
+            Console.WriteLine("[3]: Create New Ticket");
+            Console.WriteLine("[x]: Logout");
             string input = Console.ReadLine()!;
             switch (input)
             {
                 case "1":
-                    ViewTickets();
+                    ViewActiveTickets();
                     break;
                 case "2":
-                    CreateNewTicket();
+                    ViewAllTickets();
                     break;
                 case "3":
+                    CreateNewTicket();
+                    break;
+                case "x":
+                    running = false;
                     break;
                 default:
                     Console.WriteLine("Please Enter A Valid Option");
@@ -36,24 +46,75 @@ public class EmployeeDisplay
 
     }
 
-    private void ViewTickets()
+    private void ViewActiveTickets()
     {
-        foreach (Ticket t in employee.Tickets)
+        try
         {
-            Console.WriteLine(t);
+            List<Ticket> tickets = _service.GetUserTickets(employee.Id);
+            if (tickets.Count > 0)
+            {
+                foreach (Ticket tic in tickets)
+                {
+                    Console.WriteLine(tic);
+                }
+            }
+            else
+            {
+                Console.WriteLine("No tickets found");
+            }
+        }
+        catch (SqlException ex)
+        {
+            throw ex;
         }
     }
 
+    private void ViewAllTickets()
+    {
+        try
+        {
+            List<Ticket> tickets = _service.GetAllUserTickets(employee.Id);
+            if (tickets != null)
+            {
+                foreach (Ticket tic in tickets)
+                {
+                    Console.WriteLine(tic);
+                }
+            }
+            else
+            {
+                Console.WriteLine("Couldn't find any tickets.");
+            }
+        }
+        catch (SqlException ex)
+        {
+            Console.WriteLine("Error viewing your tickets");
+        }
+    }
     private void CreateNewTicket()
     {
         Console.Write("Expense Type: ");
         string type = Console.ReadLine()!;
         Console.Write("Expense Name: ");
         string name = Console.ReadLine()!;
-        Console.Write("Expense Cost: ");
+        Console.Write("Expense Cost: $");
         decimal cost = decimal.Parse(Console.ReadLine()!);
-        //Db.AddTicket(type, name, cost, employee)
-        employee.Tickets.Add(new Ticket { Type = type, Title = name, Amount = cost });
+        Ticket tic = new Ticket()
+        {
+            Title = name,
+            Type = type,
+            Amount = cost,
+            UserId = employee.Id,
+            Status = Status.Pending,
+        };
+        try
+        {
+            _service.AddTicket(tic);
+        }
+        catch (SqlException ex)
+        {
+            throw ex;
+        }
     }
 
 }

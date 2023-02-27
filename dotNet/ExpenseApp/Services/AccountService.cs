@@ -1,5 +1,6 @@
 ﻿using DataAccess;
 using Model;
+using Microsoft.Data.SqlClient;
 namespace Services;
 
 
@@ -15,19 +16,98 @@ public class AccountService
     //Maybe throw an error instead? 
     public void RegisterAccount(Employee user)
     {
-        if (!_repo.AddNewUser(user))
+        try
         {
-            Console.WriteLine("There was an error creating this account, please try again.");
+            _repo.AddNewUser(user);
         }
-        Console.WriteLine("Account created successfully.");
+        catch (SqlException ex)
+        {
+            throw ex;
+        }
     }
+
+    public List<Ticket> GetUserTickets(int uId)
+    {
+        try
+        {
+            return _repo.GetTickets(uId);
+        }
+        catch (SqlException ex)
+        {
+            throw ex;
+        }
+    }
+
+    public void ChangeTicketStatus(int ticketId, Status status)
+    {
+        try
+        {
+            _repo.ChangeTicketStatus(ticketId, status);
+        }
+        catch (SqlException ex)
+        {
+            throw ex;
+        }
+    }
+
+    public void PromoteEmployee(int uId)
+    {
+        try
+        {
+            _repo.PromoteEmployee(uId);
+        }
+        catch (SqlException ex)
+        {
+            throw ex;
+        }
+    }
+    public Dictionary<string, List<Ticket>> GetPendingTickets(int managerId)
+    {
+
+        try
+        {
+            return _repo.GetPendingTickets(managerId);
+        }
+        catch (SqlException ex)
+        {
+            throw ex;
+        }
+    }
+
+    public List<Ticket> GetAllUserTickets(int uId)
+    {
+        try
+        {
+            return _repo.GetAllTickets(uId);
+        }
+        catch (SqlException ex)
+        {
+            throw ex;
+        }
+    }
+    public void AddTicket(Ticket tic)
+    {
+        try
+        {
+            _repo.InsertTicket(tic);
+        }
+        catch (SqlException ex)
+        {
+            throw ex;
+        }
+    }
+
 
     public Employee AuthenticateLogin(string[] loginInfo)
     {
-
-        //Talk to the db and create an employee object here
-
-        return null;
+        try
+        {
+            return _repo.GetUser(loginInfo);
+        }
+        catch (SqlException ex)
+        {
+            throw ex;
+        }
     }
 
 }

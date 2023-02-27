@@ -1,5 +1,6 @@
 using Model;
 using Services;
+using Microsoft.Data.SqlClient;
 
 namespace UI;
 
@@ -48,27 +49,34 @@ public class MainMenu
         loginInfo[0] = Console.ReadLine()!;
         Console.Write("Password: ");
         loginInfo[1] = Console.ReadLine()!;
-        //Search db for username and password combination; userId;
-        //If (db.find(username, password)){
-        //  if (user == Employee): EmployeeMenu.Start()
-        //      else: ManagerMenu.Start()
-        Employee user = _service.AuthenticateLogin(loginInfo);
-        if (user == null)
+        try
         {
-            Console.WriteLine("unable to login successfully, please try again");
+            Employee user = _service.AuthenticateLogin(loginInfo);
+            if (user != null)
+            {
+                if (user.ManagerID != -1)
+                {
+                    new EmployeeDisplay(user, _service).Start();
+                }
+                else
+                {
+                    new ManagerDisplay(user, _service).Start();
+                }
+            }
+            else
+            {
+                Console.WriteLine("Login Failed");
+            }
         }
-        if (user.ManagerID != -1)
+        catch (SqlException ex)
         {
-            new EmployeeDisplay(user).Start();
-        }
-        else
-        {
-            new ManagerDisplay(user).Start();
+            Console.WriteLine(ex);
         }
     }
 
     private void CreateAccount(string userType)
     {
+
         int managerID = -1;
         Console.Write("Name: ");
         string name = Console.ReadLine()!;
@@ -91,7 +99,14 @@ public class MainMenu
             Password = password,
             ManagerID = managerID
         };
-        _service.RegisterAccount(user);
+        try
+        {
+            _service.RegisterAccount(user);
+        }
+        catch (SqlException ex)
+        {
+            Console.WriteLine(ex);
+        }
     }
 
 }
