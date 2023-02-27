@@ -1,6 +1,7 @@
 using Model;
 using Services;
 using Microsoft.Data.SqlClient;
+using Serilog;
 
 namespace UI;
 
@@ -16,7 +17,7 @@ public class EmployeeDisplay
     public void Start()
     {
         bool running = true;
-        Console.WriteLine("Welcome Back Employee" + employee.Name + "!");
+        Console.WriteLine("Welcome Back Employee " + employee.Name + "!");
         while (running)
         {
             Console.WriteLine("[1]: View Active Tickets");
@@ -65,6 +66,7 @@ public class EmployeeDisplay
         }
         catch (SqlException ex)
         {
+            Log.Error("Error in trying ViewActiveTickets()");
             throw ex;
         }
     }
@@ -88,7 +90,7 @@ public class EmployeeDisplay
         }
         catch (SqlException ex)
         {
-            Console.WriteLine("Error viewing your tickets");
+            Log.Error("Error in trying ViewActiveTickets() : " + ex);
         }
     }
     private void CreateNewTicket()
@@ -113,6 +115,7 @@ public class EmployeeDisplay
         }
         catch (SqlException ex)
         {
+            Log.Error("Error creating a new ticket");
             throw ex;
         }
     }

@@ -1,6 +1,7 @@
 //using System.Data.SqlClient;
 using Microsoft.Data.SqlClient;
 using Model;
+using Serilog;
 
 namespace DataAccess;
 
@@ -41,6 +42,7 @@ public class DBRespository : IRepository
         }
         catch (SqlException ex)
         {
+            Log.Error("Failed to connect user to DB");
             throw ex;
         }
     }
@@ -71,17 +73,26 @@ public class DBRespository : IRepository
         }
         catch (SqlException ex)
         {
+            Log.Error("Failed getting list of all tickets assigned to certain user");
             throw ex;
         }
     }
 
     public void PromoteEmployee(int uId)
     {
-        using SqlConnection connection = new SqlConnection(new Secret().GetConnectionString());
-        connection.Open();
-        using SqlCommand cmd = new SqlCommand("UPDATE UserData SET ManagerId = -1 WHERE Id = @uId", connection);
-        cmd.Parameters.AddWithValue("@uId", uId);
-        cmd.ExecuteNonQuery();
+        try
+        {
+            using SqlConnection connection = new SqlConnection(new Secret().GetConnectionString());
+            connection.Open();
+            using SqlCommand cmd = new SqlCommand("UPDATE UserData SET ManagerId = -1 WHERE Id = @uId", connection);
+            cmd.Parameters.AddWithValue("@uId", uId);
+            cmd.ExecuteNonQuery();
+        }
+        catch (SqlException ex)
+        {
+            Log.Error("Failed in promoting employee");
+            throw ex;
+        }
     }
     public Dictionary<string, List<Ticket>> GetPendingTickets(int managerId)
     {
@@ -118,6 +129,7 @@ public class DBRespository : IRepository
         }
         catch (SqlException ex)
         {
+            Log.Error("Failed to get all tickets assigned to current manager");
             throw ex;
         }
 
@@ -148,6 +160,7 @@ public class DBRespository : IRepository
         }
         catch (SqlException ex)
         {
+            Log.Error("Failed to retrieve all tickets assigned to current employee");
             throw ex;
         }
     }
@@ -165,6 +178,7 @@ public class DBRespository : IRepository
         }
         catch (SqlException ex)
         {
+            Log.Error("Failed to change status of ticket");
             throw ex;
         }
     }
@@ -187,6 +201,7 @@ public class DBRespository : IRepository
         }
         catch (SqlException ex)
         {
+            Log.Error("Failed to insert a new ticket to db");
             throw ex;
         }
     }
@@ -208,6 +223,7 @@ public class DBRespository : IRepository
         }
         catch (SqlException ex)
         {
+            Log.Error("Failed to add a new user to DB");
             throw ex;
         }
     }

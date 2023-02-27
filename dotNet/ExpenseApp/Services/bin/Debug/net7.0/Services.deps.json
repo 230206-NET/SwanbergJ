@@ -277,6 +277,14 @@
           }
         }
       },
+      "Serilog/2.12.0": {
+        "runtime": {
+          "lib/net6.0/Serilog.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.12.0.0"
+          }
+        }
+      },
       "System.Configuration.ConfigurationManager/6.0.1": {
         "dependencies": {
           "System.Security.Cryptography.ProtectedData": "6.0.0",
@@ -476,13 +484,17 @@
         "dependencies": {
           "Model": "1.0.0",
           "System.Data.SqlClient": "4.8.5",
-          "Microsoft.Data.SqlClient": "5.1.0"
+          "Microsoft.Data.SqlClient": "5.1.0",
+          "Serilog": "2.12.0"
         },
         "runtime": {
           "DataAccess.dll": {}
         }
       },
       "Model/1.0.0": {
+        "dependencies": {
+          "Serilog": "2.12.0"
+        },
         "runtime": {
           "Model.dll": {}
         }
@@ -655,6 +667,13 @@
       "sha512": "sha512-YhEdSQUsTx+C8m8Bw7ar5/VesXvCFMItyZF7G1AUY+OM0VPZUOeAVpJ4Wl6fydBGUYZxojTDR3I6Bj/+BPkJNA==",
       "path": "runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0",
       "hashPath": "runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
+    },
+    "Serilog/2.12.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xaiJLIdu6rYMKfQMYUZgTy8YK7SMZjB4Yk50C/u//Z4OsvxkUfSPJy4nknfvwAC34yr13q7kcyh4grbwhSxyZg==",
+      "path": "serilog/2.12.0",
+      "hashPath": "serilog.2.12.0.nupkg.sha512"
     },
     "System.Configuration.ConfigurationManager/6.0.1": {
       "type": "package",

@@ -13,7 +13,6 @@ public class AccountService
         _repo = repo;
     }
 
-    //Maybe throw an error instead? 
     public void RegisterAccount(Employee user)
     {
         try

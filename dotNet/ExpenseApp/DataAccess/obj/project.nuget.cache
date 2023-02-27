@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "1h/wVRP1aWyuhLQE8Wwil3JBiXThHp3Zpt+vlf805hxvUZIovXsz/2zPeG7p7TzqoKMUCy/7wYm2uNjHNL878g==",
+  "dgSpecHash": "fNjax+U8gmQ9rL+eyuWnhhgq3bc60yQCr9GpJ2eYtzF05Y7nqlnKv5eNJJ8syxUG57CKKwoyR5KQQT/AmFRbHg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Pinkgodzilla\\Documents\\Revature\\SwanbergJ\\dotNet\\ExpenseApp\\DataAccess\\DataAccess.csproj",
   "expectedPackageFiles": [
@@ -27,6 +27,7 @@
     "C:\\Users\\Pinkgodzilla\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Pinkgodzilla\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Pinkgodzilla\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\Pinkgodzilla\\.nuget\\packages\\serilog\\2.12.0\\serilog.2.12.0.nupkg.sha512",
     "C:\\Users\\Pinkgodzilla\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.1\\system.configuration.configurationmanager.6.0.1.nupkg.sha512",
     "C:\\Users\\Pinkgodzilla\\.nuget\\packages\\system.data.sqlclient\\4.8.5\\system.data.sqlclient.4.8.5.nupkg.sha512",
     "C:\\Users\\Pinkgodzilla\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",

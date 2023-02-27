@@ -1,6 +1,7 @@
 using Model;
 using Services;
 using Microsoft.Data.SqlClient;
+using Serilog;
 
 namespace UI;
 
@@ -62,6 +63,7 @@ public class ManagerDisplay
         }
         catch (SqlException ex)
         {
+            Log.Error("Error rejecting ticket");
             Console.WriteLine(ex);
         }
     }
@@ -76,6 +78,7 @@ public class ManagerDisplay
         }
         catch (SqlException ex)
         {
+            Log.Error("Error promoting employee");
             Console.WriteLine(ex);
         }
     }
@@ -91,6 +94,7 @@ public class ManagerDisplay
         }
         catch (SqlException ex)
         {
+            Log.Error("Error approving ticket");
             Console.WriteLine(ex);
         }
     }
@@ -118,6 +122,7 @@ public class ManagerDisplay
         }
         catch (SqlException ex)
         {
+            Log.Error("Error viewing all tickets in ManagerDisplay : " + ex);
             Console.WriteLine("Couldn't view tickets.");
         }
     }

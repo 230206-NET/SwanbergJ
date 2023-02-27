@@ -1,6 +1,7 @@
 using Model;
 using Services;
 using Microsoft.Data.SqlClient;
+using Serilog;
 
 namespace UI;
 
@@ -65,12 +66,13 @@ public class MainMenu
             }
             else
             {
-                Console.WriteLine("Login Failed");
+                Console.WriteLine("Unable to login.");
             }
         }
         catch (SqlException ex)
         {
-            Console.WriteLine(ex);
+            //Console.WriteLine(ex);
+            Log.Error("Login Failed : " + ex);
         }
     }
 
@@ -102,10 +104,12 @@ public class MainMenu
         try
         {
             _service.RegisterAccount(user);
+            Console.WriteLine("Account successfully created.");
         }
         catch (SqlException ex)
         {
-            Console.WriteLine(ex);
+            Log.Error("Creating Account Failed : " + ex);
+            //Console.WriteLine(ex);
         }
     }
 
