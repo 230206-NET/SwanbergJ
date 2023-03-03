@@ -40,7 +40,7 @@ public class Ticket
         }
         set
         {
-            if (value > 2000 || value < 1000)
+            if (value > 2000)
             {
                 Log.Warning("UserId is invalid value");
                 throw new ArgumentException("User Id should be between 1000-1999");

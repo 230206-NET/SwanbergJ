@@ -60,7 +60,7 @@ public class ManagerDisplay
             Console.Write("Enter ID of ticket you want to reject: ");
             int ticketID = Int32.Parse(Console.ReadLine()!);
 
-            JsonContent jsonContent = JsonContent.Create<int>(2);
+            JsonContent jsonContent = JsonContent.Create<int>(1);
             await _http.PostAsync($"tickets/{ticketID}", jsonContent);
             // _service.ChangeTicketStatus(ticketID, 2);
             Console.WriteLine("Ticket successfully approved.");
@@ -135,7 +135,7 @@ public class ManagerDisplay
         catch (Exception ex)
         {
             Log.Error("Error viewing all tickets in ManagerDisplay : " + ex);
-            Console.WriteLine("Couldn't view tickets.");
+            Console.WriteLine("Couldn't view tickets." + ex);
         }
     }
 
