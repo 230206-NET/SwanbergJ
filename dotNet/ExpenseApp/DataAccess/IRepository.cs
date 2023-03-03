@@ -7,21 +7,21 @@ public interface IRepository
 
     List<Employee> GetAllUsers();
 
-    void AddNewUser(Employee user);
+    Employee AddNewUser(Employee user);
 
-    void ChangeTicketStatus(int ticketId, Status status);
+    bool ChangeTicketStatus(int ticketId, int status);
 
     Employee GetUser(string[] loginInfo);
 
     List<Ticket> GetTickets(int uId);
 
-    void PromoteEmployee(int uId);
+    bool PromoteEmployee(int uId);
 
     List<Ticket> GetAllTickets(int uId);
 
     Dictionary<string, List<Ticket>> GetPendingTickets(int managerId);
 
-    void InsertTicket(Ticket tic);
+    Ticket InsertTicket(Ticket tic);
 
 
 }

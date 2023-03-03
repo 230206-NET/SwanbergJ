@@ -1,21 +1,22 @@
 using Model;
-using Services;
-using Microsoft.Data.SqlClient;
 using Serilog;
+using System.Net.Http.Json;
+
+using System.Text.Json;
 
 namespace UI;
 
 public class ManagerDisplay
 {
-    private readonly AccountService _service;
     public Employee user;
+    private readonly HttpClient _http;
 
-    public ManagerDisplay(Employee user, AccountService service)
+    public ManagerDisplay(Employee user, HttpClient http)
     {
-        _service = service;
+        _http = http;
         this.user = user;
     }
-    public void Start()
+    public async Task Start()
     {
         Console.WriteLine("Welcome Back Manager " + user.Name + "!");
         bool running = true;
@@ -30,16 +31,16 @@ public class ManagerDisplay
             switch (input)
             {
                 case "1":
-                    ViewPendingTickets();
+                    await ViewPendingTickets();
                     break;
                 case "2":
-                    ApproveTicket();
+                    await ApproveTicket();
                     break;
                 case "3":
-                    RejectTicket();
+                    await RejectTicket();
                     break;
                 case "4":
-                    PromoteEmployee();
+                    await PromoteEmployee();
                     break;
                 case "x":
                     running = false;
@@ -52,58 +53,69 @@ public class ManagerDisplay
 
     }
 
-    private void RejectTicket()
+    private async Task RejectTicket()
     {
         try
         {
             Console.Write("Enter ID of ticket you want to reject: ");
             int ticketID = Int32.Parse(Console.ReadLine()!);
-            _service.ChangeTicketStatus(ticketID, 2);
+
+            JsonContent jsonContent = JsonContent.Create<int>(2);
+            await _http.PostAsync($"tickets/{ticketID}", jsonContent);
+            // _service.ChangeTicketStatus(ticketID, 2);
             Console.WriteLine("Ticket successfully approved.");
         }
-        catch (SqlException ex)
+        catch (Exception ex)
         {
             Log.Error("Error rejecting ticket");
             Console.WriteLine(ex);
         }
     }
-    private void PromoteEmployee()
+    private async Task PromoteEmployee()
     {
         try
         {
             Console.Write("Enter ID of employee to promote: ");
             int uId = Int32.Parse(Console.ReadLine()!);
-            _service.PromoteEmployee(uId);
+
+            JsonContent jsonContent = JsonContent.Create<int>(uId);
+            await _http.PostAsync("manager", jsonContent);
+            // _service.PromoteEmployee(uId);
             Console.WriteLine("Employee successfully promoted.");
         }
-        catch (SqlException ex)
+        catch (Exception ex)
         {
             Log.Error("Error promoting employee");
             Console.WriteLine(ex);
         }
     }
 
-    private void ApproveTicket()
+    private async Task ApproveTicket()
     {
         try
         {
             Console.Write("Enter ID of ticket you want to approve: ");
             int ticketID = Int32.Parse(Console.ReadLine()!);
-            _service.ChangeTicketStatus(ticketID, 1);
+
+            JsonContent jsonContent = JsonContent.Create<int>(2);
+            await _http.PostAsync($"tickets/{ticketID}", jsonContent);
             Console.WriteLine("Ticket successfully approved.");
         }
-        catch (SqlException ex)
+        catch (Exception ex)
         {
             Log.Error("Error approving ticket");
             Console.WriteLine(ex);
         }
     }
 
-    private void ViewPendingTickets()
+    private async Task ViewPendingTickets()
     {
         try
         {
-            Dictionary<string, List<Ticket>> userTickets = _service.GetPendingTickets(user.Id);
+            // Dictionary<string, List<Ticket>> userTickets = _service.GetPendingTickets(user.Id);
+            string content = await _http.GetStringAsync($"manager?managerId={user.Id}");
+            Dictionary<string, List<Ticket>> userTickets = JsonSerializer.Deserialize<Dictionary<string, List<Ticket>>>(content)!;
+
             if (userTickets.Count > 0)
             {
                 foreach (string user in userTickets.Keys)
@@ -120,7 +132,7 @@ public class ManagerDisplay
                 Console.WriteLine("Couldn't find any tickets.");
             }
         }
-        catch (SqlException ex)
+        catch (Exception ex)
         {
             Log.Error("Error viewing all tickets in ManagerDisplay : " + ex);
             Console.WriteLine("Couldn't view tickets.");

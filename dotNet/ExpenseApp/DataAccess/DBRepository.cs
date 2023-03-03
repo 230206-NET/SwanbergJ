@@ -78,7 +78,7 @@ public class DBRespository : IRepository
         }
     }
 
-    public void PromoteEmployee(int uId)
+    public bool PromoteEmployee(int uId)
     {
         try
         {
@@ -87,6 +87,8 @@ public class DBRespository : IRepository
             using SqlCommand cmd = new SqlCommand("UPDATE UserData SET ManagerId = -1 WHERE Id = @uId", connection);
             cmd.Parameters.AddWithValue("@uId", uId);
             cmd.ExecuteNonQuery();
+
+            return true;
         }
         catch (SqlException ex)
         {
@@ -165,7 +167,7 @@ public class DBRespository : IRepository
         }
     }
 
-    public void ChangeTicketStatus(int ticketId, Status status)
+    public bool ChangeTicketStatus(int ticketId, int status)
     {
         try
         {
@@ -173,8 +175,10 @@ public class DBRespository : IRepository
             connection.Open();
             using SqlCommand cmd = new SqlCommand("UPDATE Ticket SET Status = @status WHERE Id = @ticketId", connection);
             cmd.Parameters.AddWithValue("@ticketId", ticketId);
-            cmd.Parameters.AddWithValue("@status", (int)status);
+            cmd.Parameters.AddWithValue("@status", status);
             cmd.ExecuteNonQuery();
+
+            return true;
         }
         catch (SqlException ex)
         {
@@ -183,7 +187,7 @@ public class DBRespository : IRepository
         }
     }
 
-    public void InsertTicket(Ticket tic)
+    public Ticket InsertTicket(Ticket tic)
     {
 
         try
@@ -198,6 +202,7 @@ public class DBRespository : IRepository
             cmd.Parameters.AddWithValue("@uId", tic.UserId);
 
             cmd.ExecuteNonQuery();
+            return tic;
         }
         catch (SqlException ex)
         {
@@ -206,7 +211,7 @@ public class DBRespository : IRepository
         }
     }
 
-    public void AddNewUser(Employee user)
+    public Employee AddNewUser(Employee user)
     {
         try
         {
@@ -219,6 +224,8 @@ public class DBRespository : IRepository
             cmd.Parameters.AddWithValue("@user", user.Username);
 
             cmd.ExecuteNonQuery();
+
+            return user;
 
         }
         catch (SqlException ex)

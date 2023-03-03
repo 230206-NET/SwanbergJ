@@ -13,11 +13,11 @@ public class AccountService
         _repo = repo;
     }
 
-    public void RegisterAccount(Employee user)
+    public Employee RegisterAccount(Employee user)
     {
         try
         {
-            _repo.AddNewUser(user);
+            return _repo.AddNewUser(user);
         }
         catch (SqlException ex)
         {
@@ -37,11 +37,11 @@ public class AccountService
         }
     }
 
-    public void ChangeTicketStatus(int ticketId, Status status)
+    public bool ChangeTicketStatus(int ticketId, int status)
     {
         try
         {
-            _repo.ChangeTicketStatus(ticketId, status);
+            return _repo.ChangeTicketStatus(ticketId, status);
         }
         catch (SqlException ex)
         {
@@ -49,11 +49,11 @@ public class AccountService
         }
     }
 
-    public void PromoteEmployee(int uId)
+    public bool PromoteEmployee(int uId)
     {
         try
         {
-            _repo.PromoteEmployee(uId);
+            return _repo.PromoteEmployee(uId);
         }
         catch (SqlException ex)
         {
@@ -84,11 +84,11 @@ public class AccountService
             throw ex;
         }
     }
-    public void AddTicket(Ticket tic)
+    public Ticket AddTicket(Ticket tic)
     {
         try
         {
-            _repo.InsertTicket(tic);
+            return _repo.InsertTicket(tic);
         }
         catch (SqlException ex)
         {

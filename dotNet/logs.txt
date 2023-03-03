@@ -1,0 +1,68 @@
+2023-03-02 19:37:05.493 -08:00 [INF] Starting Application ... 
+2023-03-02 19:37:24.550 -08:00 [ERR] Login Failed : System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetStringAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at UI.MainMenu.Login() in C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\ExpenseUI\MainMenu.cs:line 60
+2023-03-02 19:38:38.287 -08:00 [ERR] Login Failed : System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetStringAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at UI.MainMenu.Login() in C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\ExpenseUI\MainMenu.cs:line 60
+2023-03-02 19:43:03.276 -08:00 [INF] Starting Application ... 
+2023-03-02 19:43:07.762 -08:00 [ERR] Login Failed : System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetStringAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at UI.MainMenu.Login() in C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\ExpenseUI\MainMenu.cs:line 60
+2023-03-02 19:43:52.163 -08:00 [INF] Starting Application ... 
+2023-03-02 19:46:55.540 -08:00 [INF] Starting Application ... 
+2023-03-02 19:50:36.891 -08:00 [INF] Starting Application ... 
+2023-03-02 19:53:35.188 -08:00 [INF] Starting Application ... 
+2023-03-02 19:55:08.619 -08:00 [INF] Starting Application ... 
+2023-03-02 20:02:08.898 -08:00 [INF] Starting Application ... 
+2023-03-02 21:53:05.140 -08:00 [INF] Starting Application ... 
+2023-03-02 22:07:04.948 -08:00 [INF] Starting Application ... 
+2023-03-02 22:07:21.671 -08:00 [ERR] Error viewing all tickets in ManagerDisplay : System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetStringAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at UI.ManagerDisplay.ViewPendingTickets() in C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\ExpenseUI\ManagerDisplay.cs:line 116
+2023-03-02 22:08:51.518 -08:00 [INF] Starting Application ... 
+2023-03-02 22:10:58.863 -08:00 [INF] Starting Application ... 
+2023-03-02 22:11:36.531 -08:00 [INF] Starting Application ... 
+2023-03-02 22:11:56.367 -08:00 [ERR] Error viewing all tickets in ManagerDisplay : System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetStringAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at UI.ManagerDisplay.ViewPendingTickets() in C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\ExpenseUI\ManagerDisplay.cs:line 116
+2023-03-02 22:12:56.975 -08:00 [INF] Starting Application ... 
+2023-03-02 23:15:34.003 -08:00 [INF] Starting Application ... 
+2023-03-02 23:16:26.882 -08:00 [INF] Starting Application ... 
+2023-03-02 23:17:54.580 -08:00 [ERR] Login Failed : System.Net.Http.HttpRequestException: An error occurred while sending the request.
+ ---> System.IO.IOException: Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host..
+ ---> System.Net.Sockets.SocketException (10054): An existing connection was forcibly closed by the remote host.
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource<System.Int32>.GetResult(Int16 token)
+   at System.Net.Http.HttpConnection.InitialFillAsync(Boolean async)
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at UI.MainMenu.Login() in C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\ExpenseUI\MainMenu.cs:line 60
+2023-03-02 23:24:37.417 -08:00 [INF] Starting Application ... 
+2023-03-02 23:25:26.211 -08:00 [WRN] UserId is invalid value
+2023-03-02 23:25:26.240 -08:00 [ERR] Error viewing all tickets in ManagerDisplay : System.ArgumentException: User Id should be between 1000-1999
+   at Model.Ticket.set_UserId(Int32 value) in C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\ExpenseApp\Model\Ticket.cs:line 46
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.ReadJsonAndSetMember(Object obj, ReadStack& state, Utf8JsonReader& reader)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, TCollection& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonDictionaryConverter`3.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, TDictionary& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at UI.ManagerDisplay.ViewPendingTickets() in C:\Users\Pinkgodzilla\Documents\Revature\SwanbergJ\dotNet\ExpenseUI\ManagerDisplay.cs:line 117
+2023-03-02 23:26:50.484 -08:00 [INF] Starting Application ... 
+2023-03-03 06:43:12.328 -08:00 [INF] Starting Application ... 
